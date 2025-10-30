@@ -3,37 +3,46 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FinTrack — Mockups (Landing & Admin)</title>
+  <title>FinTrack — Controla tus finanzas sin complicaciones</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
-    :root{
-      --primary-600: #0ea5a4; /* teal */
-      --primary-800: #0369a1; /* deep blue */
+    :root {
+      --primary-600: #0ea5a4;
+      --primary-800: #0369a1;
       --bg: #f7fbfc;
       --card-shadow: 0 6px 20px rgba(3, 37, 65, 0.06);
-      --glass: rgba(255,255,255,0.7);
     }
-    body{background: linear-gradient(180deg, #f7fbfc 0%, #ffffff 60%); font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
-    .brand-gradient{background: linear-gradient(90deg,var(--primary-600),var(--primary-800)); -webkit-background-clip: text; color: transparent}
-    .hero{padding: 4rem 0}
-    .feature-card{border: none; box-shadow: var(--card-shadow); border-radius: 14px}
-    .app-mock{background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.6)); border-radius: 18px; padding: 1rem; box-shadow: var(--card-shadow)}
-    .nav-pills .nav-link.active{background: linear-gradient(90deg,var(--primary-600),var(--primary-800)); color: #fff}
-    .sidebar{min-height: 100vh; background: #ffffff; border-right: 1px solid #eef2f6}
-    .sidebar .nav-link{color:#374151}
-    .small-muted{font-size:.85rem; color:#6b7280}
-    @media (max-width: 992px){ .sidebar{min-height: auto} }
+    body {
+      background: linear-gradient(180deg, #f7fbfc 0%, #ffffff 60%);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    .brand-gradient {
+      background: linear-gradient(90deg, var(--primary-600), var(--primary-800));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .hero { padding: 4rem 0; }
+    .feature-card { border: none; box-shadow: var(--card-shadow); border-radius: 14px; }
+    .app-mock { background: rgba(255,255,255,0.85); border-radius: 18px; padding: 1rem; box-shadow: var(--card-shadow); }
+    .nav-pills .nav-link.active { background: linear-gradient(90deg, var(--primary-600), var(--primary-800)); color: #fff; }
+    .small-muted { font-size: .85rem; color: #6b7280; }
+    footer { background: #fff; border-top: 1px solid #e5e7eb; }
+    @media (max-width: 576px) {
+      .hero { padding: 2rem 1rem; }
+    }
   </style>
 </head>
+
 <body>
-  <!-- Topbar with quick nav to sections -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#landing">
-        <div class="d-flex align-items-center justify-content-center rounded-circle" style="width:40px;height:40px;background:linear-gradient(90deg,var(--primary-600),var(--primary-800));color:#fff;font-weight:700">FT</div>
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <div class="rounded-circle d-flex align-items-center justify-content-center" 
+             style="width:40px;height:40px;background:linear-gradient(90deg,var(--primary-600),var(--primary-800));color:#fff;font-weight:700">FT</div>
         <div>
-          <div style="line-height:1">FinTrack</div>
+          <div>FinTrack</div>
           <small class="text-muted">Controla tus finanzas</small>
         </div>
       </a>
@@ -44,27 +53,29 @@
 
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="#landing">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="#features">Características</a></li>
           <li class="nav-item"><a class="nav-link" href="#pricing">Planes</a></li>
-          <li class="nav-item"><a class="nav-link" href="#admin">Admin (Demo)</a></li>
-          <li class="nav-item ms-3"><a class="btn btn-outline-primary" href="#register">Crear cuenta</a></li>
+          <li class="nav-item"><a class="nav-link" href="#admin-demo">Demo Panel</a></li>
+          <li class="nav-item ms-3"><a class="btn btn-outline-primary" href="login.html">Iniciar sesión</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- LANDING -->
-  <section id="landing" class="hero">
+  <!-- Hero -->
+  <section id="landing" class="hero mt-5 pt-5">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6">
           <h1 class="display-5 fw-bold">Domina tus finanzas sin complicaciones</h1>
-          <p class="lead text-muted">FinTrack te ayuda a registrar gastos, fijar metas de ahorro y entender a dónde va tu dinero — con una app sencilla y un panel administrativo para gestionar usuarios y reportes.</p>
+          <p class="lead text-muted">
+            FinTrack te ayuda a registrar gastos, fijar metas de ahorro y entender a dónde va tu dinero — 
+            con una app sencilla y un panel administrativo para visualizar tus reportes.
+          </p>
 
           <div class="d-flex gap-2 mt-4">
-            <a class="btn btn-lg btn-primary" href="#register" role="button">Empieza gratis</a>
-            <a class="btn btn-lg btn-outline-secondary" href="#features">Ver características</a>
+            <a class="btn btn-lg btn-primary" href="login.html" role="button">Empieza ahora</a>
+            <a class="btn btn-lg btn-outline-secondary" href="dashboard.html" role="button">Ver Demo</a>
           </div>
 
           <div class="row mt-4 g-2">
@@ -85,7 +96,6 @@
 
         <div class="col-lg-6 text-center mt-4 mt-lg-0">
           <div class="app-mock mx-auto" style="max-width:360px">
-            <!-- phone mockup simplified -->
             <div class="border rounded-3" style="overflow:hidden;background:linear-gradient(180deg,#ffffff,#f1fcfb);">
               <div class="p-3">
                 <div class="d-flex justify-content-between align-items-center mb-3">
@@ -93,309 +103,118 @@
                   <small class="small-muted">Saldo</small>
                 </div>
                 <div class="bg-white p-3 rounded-2 shadow-sm mb-3">
-                  <div class="d-flex justify-content-between"><div class="small-muted">Saldo actual</div><div class="h5">$850.000</div></div>
-                  <div class="progress mt-2" style="height:8px"><div class="progress-bar" style="width:25%"></div></div>
+                  <div class="d-flex justify-content-between">
+                    <div class="small-muted">Saldo actual</div>
+                    <div class="h5">$850.000</div>
+                  </div>
+                  <div class="progress mt-2" style="height:8px">
+                    <div class="progress-bar" style="width:25%"></div>
+                  </div>
                 </div>
-
                 <div class="list-group mb-2">
                   <div class="list-group-item d-flex justify-content-between">Salida amigos <span class="text-danger">-$200.000</span></div>
                   <div class="list-group-item d-flex justify-content-between">Pago nómina <span class="text-success">+$3.000.000</span></div>
                 </div>
-
                 <div class="d-flex gap-2">
-                  <button class="btn btn-outline-primary btn-sm flex-fill">Registrar</button>
-                  <button class="btn btn-primary btn-sm flex-fill">Metas</button>
+                  <a class="btn btn-outline-primary btn-sm flex-fill" href="dashboard.html">Registrar</a>
+                  <a class="btn btn-primary btn-sm flex-fill" href="dashboard.html">Metas</a>
                 </div>
               </div>
             </div>
           </div>
-
-          <small class="d-block mt-3 small-muted">Preview responsivo — mockup móvil</small>
+          <small class="d-block mt-3 small-muted">Vista simulada de la app móvil</small>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
+  <!-- Features -->
   <section id="features" class="py-5">
     <div class="container">
       <div class="row g-4 align-items-center">
         <div class="col-lg-5">
           <h3>Características principales</h3>
-          <p class="text-muted">Registro rápido, metas de ahorro, reportes descargables y un panel administrativo para gestión de usuarios y exportes.</p>
-
+          <p class="text-muted">Registra movimientos, define metas, analiza reportes y mantén el control de tus finanzas.</p>
           <ul class="list-unstyled mt-3">
-            <li class="mb-2"><strong>Registro rápido</strong> — Guarda ingresos y gastos en dos clicks.</li>
-            <li class="mb-2"><strong>Metas visuales</strong> — Barra de progreso y notificaciones motivadoras.</li>
-            <li class="mb-2"><strong>Reportes</strong> — Exporta CSV/PDF desde el panel admin.</li>
+            <li class="mb-2"><strong>Registro rápido</strong> — Guarda ingresos y gastos en segundos.</li>
+            <li class="mb-2"><strong>Metas visuales</strong> — Barra de progreso y recordatorios automáticos.</li>
+            <li class="mb-2"><strong>Reportes exportables</strong> — Descarga tus movimientos en CSV o PDF.</li>
           </ul>
-
-          <a href="#pricing" class="btn btn-outline-primary">Ver planes</a>
+          <a href="dashboard.html" class="btn btn-outline-primary">Ver Panel Demo</a>
         </div>
+
         <div class="col-lg-7">
           <div class="row g-3">
-            <div class="col-md-6">
-              <div class="p-3 feature-card">
-                <h5 class="mb-1">Resumen mensual</h5>
-                <p class="small-muted mb-0">Gráficos y top categorías.</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="p-3 feature-card">
-                <h5 class="mb-1">Sincronización</h5>
-                <p class="small-muted mb-0">Web y móvil con datos consistentes.</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="p-3 feature-card">
-                <h5 class="mb-1">Configuración</h5>
-                <p class="small-muted mb-0">Moneda, idioma y notificaciones.</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="p-3 feature-card">
-                <h5 class="mb-1">Reportes exportables</h5>
-                <p class="small-muted mb-0">CSV/PDF para contabilidad.</p>
-              </div>
-            </div>
+            <div class="col-md-6"><div class="p-3 feature-card"><h5>Resumen mensual</h5><p class="small-muted">Gráficos de gastos e ingresos.</p></div></div>
+            <div class="col-md-6"><div class="p-3 feature-card"><h5>Sincronización</h5><p class="small-muted">Datos consistentes entre web y móvil.</p></div></div>
+            <div class="col-md-6"><div class="p-3 feature-card"><h5>Configuración</h5><p class="small-muted">Moneda, idioma y notificaciones.</p></div></div>
+            <div class="col-md-6"><div class="p-3 feature-card"><h5>Seguridad</h5><p class="small-muted">Acceso con autenticación segura.</p></div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRICING (simple) -->
+  <!-- Pricing -->
   <section id="pricing" class="py-5 bg-white">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10 text-center">
-          <h3>Planes</h3>
-          <p class="text-muted">Prueba gratis y planes pagados con funcionalidades avanzadas para empresas.</p>
-
-          <div class="row mt-4 g-3">
-            <div class="col-md-4">
-              <div class="p-4 rounded-3 shadow-sm">
-                <h5>Básico</h5>
-                <p class="small-muted">Gratis — para uso personal</p>
-                <ul class="small-muted">
-                  <li>Registro de movimientos</li>
-                  <li>2 metas</li>
-                </ul>
-                <button class="btn btn-outline-primary">Seleccionar</button>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="p-4 rounded-3 shadow-sm border border-1" style="border-color:rgba(3,37,65,0.04)">
-                <h5>Pro</h5>
-                <p class="small-muted">Funciones avanzadas</p>
-                <ul class="small-muted">
-                  <li>Reportes exportables</li>
-                  <li>Prioridad en soporte</li>
-                </ul>
-                <button class="btn btn-primary">Comenzar</button>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="p-4 rounded-3 shadow-sm">
-                <h5>Empresa</h5>
-                <p class="small-muted">Admin y múltiples usuarios</p>
-                <ul class="small-muted">
-                  <li>Gestión de usuarios</li>
-                  <li>Integraciones</li>
-                </ul>
-                <button class="btn btn-outline-primary">Contactar</button>
-              </div>
-            </div>
+    <div class="container text-center">
+      <h3>Planes</h3>
+      <p class="text-muted">Prueba gratis y accede a más funciones según tus necesidades.</p>
+      <div class="row mt-4 g-3">
+        <div class="col-md-4">
+          <div class="p-4 rounded-3 shadow-sm">
+            <h5>Básico</h5>
+            <p class="small-muted">Gratis — para uso personal</p>
+            <ul class="small-muted list-unstyled">
+              <li>Registro de movimientos</li>
+              <li>2 metas activas</li>
+            </ul>
+            <a href="login.html" class="btn btn-outline-primary">Empieza gratis</a>
           </div>
-
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REGISTER / LOGIN mocks -->
-  <section id="register" class="py-5">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6">
-          <div class="p-4 rounded-3 shadow-sm bg-white">
-            <h4 class="mb-3">Crear cuenta</h4>
-            <form>
-              <div class="mb-3">
-                <label class="form-label">Nombre</label>
-                <input class="form-control" placeholder="Laura" />
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Correo</label>
-                <input class="form-control" placeholder="correo@ejemplo.com" />
-              </div>
-              <div class="row g-2">
-                <div class="col-md-6"><input class="form-control" type="password" placeholder="Contraseña" /></div>
-                <div class="col-md-6"><input class="form-control" type="password" placeholder="Confirmar contraseña" /></div>
-              </div>
-              <div class="mt-3 d-grid">
-                <button class="btn btn-primary">Crear cuenta</button>
-              </div>
-              <div class="text-center mt-2 small-muted">¿Ya tienes cuenta? Inicia sesión</div>
-            </form>
+        <div class="col-md-4">
+          <div class="p-4 rounded-3 shadow-sm border border-1">
+            <h5>Pro</h5>
+            <p class="small-muted">Funciones avanzadas</p>
+            <ul class="small-muted list-unstyled">
+              <li>Reportes exportables</li>
+              <li>Soporte prioritario</li>
+            </ul>
+            <a href="dashboard.html" class="btn btn-primary">Probar demo</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 rounded-3 shadow-sm">
+            <h5>Empresa</h5>
+            <p class="small-muted">Para equipos y admins</p>
+            <ul class="small-muted list-unstyled">
+              <li>Gestión de usuarios</li>
+              <li>Integraciones avanzadas</li>
+            </ul>
+            <a href="dashboard.html" class="btn btn-outline-primary">Ver panel</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ADMIN DASHBOARD MOCKUP -->
-  <section id="admin" class="py-5 bg-light">
-    <div class="container-fluid">
-      <div class="row g-0">
-        <aside class="col-lg-3 sidebar p-4">
-          <div class="mb-4 d-flex align-items-center gap-2">
-            <div class="rounded-circle d-flex align-items-center justify-content-center" style="width:44px;height:44px;background:linear-gradient(90deg,var(--primary-600),var(--primary-800));color:#fff;font-weight:700">A</div>
-            <div>
-              <div><strong>Admin FinTrack</strong></div>
-              <small class="small-muted">Administrador</small>
-            </div>
-          </div>
-
-          <nav class="nav flex-column">
-            <a class="nav-link active" href="#admin">Dashboard</a>
-            <a class="nav-link" href="#users">Usuarios</a>
-            <a class="nav-link" href="#metas">Metas & Categorías</a>
-            <a class="nav-link" href="#reportes">Reportes</a>
-            <a class="nav-link" href="#config">Configuración</a>
-            <a class="nav-link text-danger mt-3" href="#">Cerrar sesión</a>
-          </nav>
-        </aside>
-
-        <main class="col-lg-9 p-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h4 class="mb-0">Dashboard</h4>
-            <div class="d-flex gap-2">
-              <div class="small-muted">Buscar usuarios</div>
-              <input class="form-control form-control-sm" style="width:220px" placeholder="Buscar..." />
-            </div>
-          </div>
-
-          <div class="row g-3">
-            <div class="col-md-4">
-              <div class="p-3 rounded-3 bg-white shadow-sm">
-                <div class="small-muted">Usuarios</div>
-                <div class="h5">1.234</div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="p-3 rounded-3 bg-white shadow-sm">
-                <div class="small-muted">Ingresos (mes)</div>
-                <div class="h5">$12.500.000</div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="p-3 rounded-3 bg-white shadow-sm">
-                <div class="small-muted">Gastos (mes)</div>
-                <div class="h5 text-danger">$9.320.000</div>
-              </div>
-            </div>
-
-            <div class="col-lg-8">
-              <div class="p-3 rounded-3 bg-white shadow-sm">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <strong>Evolución mensual</strong>
-                  <small class="small-muted">Últimos 6 meses</small>
-                </div>
-                <canvas id="lineChart" style="height:280px"></canvas>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="p-3 rounded-3 bg-white shadow-sm">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <strong>Top categorías</strong>
-                  <small class="small-muted">Mes actual</small>
-                </div>
-                <canvas id="doughnutChart" style="height:220px"></canvas>
-              </div>
-            </div>
-
-            <div class="col-12">
-              <div class="p-3 rounded-3 bg-white shadow-sm">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <strong>Últimos movimientos</strong>
-                  <small class="small-muted">Actualizado hace 5 min</small>
-                </div>
-                <div class="table-responsive">
-                  <table class="table table-borderless mb-0">
-                    <thead><tr><th>Usuario</th><th>Movimiento</th><th>Categoria</th><th>Monto</th><th>Fecha</th></tr></thead>
-                    <tbody>
-                      <tr><td>Laura G.</td><td>Pago nómina</td><td>Ingresos</td><td class="text-success">+$3.000.000</td><td>2025-09-28</td></tr>
-                      <tr><td>Juan P.</td><td>Salida amigos</td><td>Ocio</td><td class="text-danger">-$200.000</td><td>2025-09-27</td></tr>
-                      <tr><td>Carla R.</td><td>Compra supermercado</td><td>Alimentación</td><td class="text-danger">-$120.000</td><td>2025-09-25</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </main>
-      </div>
+  <!-- Admin Demo -->
+  <section id="admin-demo" class="py-5 bg-light">
+    <div class="container text-center">
+      <h3 class="fw-bold mb-3">Demo del Panel Administrativo</h3>
+      <p class="text-muted mb-4">Explora un ejemplo del dashboard con datos ficticios.</p>
+      <a href="dashboard.html" class="btn btn-lg btn-primary">Abrir Demo</a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-4 bg-white mt-4">
-    <div class="container d-flex justify-content-between">
-      <div>
-        <strong>FinTrack</strong> <small class="small-muted">— Proyecto mockup</small>
-      </div>
-      <div class="small-muted">Hecho con ♥ · Diseño fintech · Español</div>
+  <footer class="py-4 mt-4">
+    <div class="container d-flex justify-content-between flex-wrap">
+      <div><strong>FinTrack</strong> <small class="text-muted">— Proyecto académico 2025</small></div>
+      <div class="text-muted small">Hecho con ♥ · Diseño Fintech</div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Sample Chart data (mock)
-    const lineCtx = document.getElementById('lineChart');
-    if(lineCtx){
-      new Chart(lineCtx, {
-        type: 'line',
-        data: {
-          labels: ['Abr','May','Jun','Jul','Ago','Sep'],
-          datasets: [{
-            label: 'Ingresos',
-            data: [8000,9000,10000,9500,11000,12500],
-            tension:0.35,
-            fill:true,
-            backgroundColor: 'rgba(3,37,65,0.06)',
-            borderColor: '#0369a1',
-            pointRadius:3
-          },{
-            label: 'Gastos',
-            data: [6000,6500,7000,6800,7200,9320],
-            tension:0.35,
-            fill:false,
-            borderColor: '#0ea5a4',
-            pointRadius:3
-          }]
-        },
-        options: {
-          responsive:true,
-          plugins:{legend:{display:true,position:'top'}},
-          scales:{y:{beginAtZero:false}}
-        }
-      });
-    }
-
-    const doughCtx = document.getElementById('doughnutChart');
-    if(doughCtx){
-      new Chart(doughCtx, {
-        type:'doughnut',
-        data:{
-          labels:['Alimentación','Transporte','Ocio','Ahorros'],
-          datasets:[{data:[62.5,25,12.5,40], hoverOffset:8, backgroundColor:['#0369a1','#0ea5a4','#60a5fa','#c084fc']}]
-        },
-        options:{responsive:true, plugins:{legend:{position:'bottom'}}}
-      });
-    }
-  </script>
 </body>
 </html>
